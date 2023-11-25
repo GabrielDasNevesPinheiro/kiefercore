@@ -1,6 +1,6 @@
 {
   "name": "create-kiefercore",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,6 +15,7 @@
     "tsconfig.json",
     ".gitignore"
   ],
+  "bin": "./create-kiefercore.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
