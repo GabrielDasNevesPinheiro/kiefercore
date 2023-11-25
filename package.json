@@ -1,21 +1,12 @@
 {
   "name": "create-kiefercore",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx ts-node src/app.ts"
   },
-  "files": [
-    "src/**",
-    ".ENV",
-    "package.json",
-    "package-lock.json",
-    "tsconfig.json",
-    ".gitignore"
-  ],
-  "bin": "./create-kiefercore.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
