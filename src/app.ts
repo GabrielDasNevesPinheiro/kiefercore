@@ -1,6 +1,7 @@
 import { Client, GatewayIntentBits } from "discord.js";
 import { config } from "dotenv";
 import executeAction from "./handler/InteractionHandler";
+import postSlashCommands from "./api/Register";
 
 config();
 
@@ -27,5 +28,5 @@ client.on("interactionCreate", async (interaction) => {
 
 });
 
-
+postSlashCommands();
 client.login(process.env.TOKEN);
