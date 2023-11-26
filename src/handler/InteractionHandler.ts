@@ -14,7 +14,7 @@ function parseSlashCommands (): { [key: string]: typeof Command } {
     const cmdlist: { [key: string]: typeof Command } = {};
 
     
-    const commandsDir = path.join(__dirname, "../api/commands");
+    const commandsDir = path.join(__dirname, "../commands");
 
     const files = fs.readdirSync(commandsDir);
 
