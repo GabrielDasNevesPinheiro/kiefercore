@@ -1,5 +1,5 @@
 import { CacheType, CommandInteraction, Interaction } from "discord.js";
-import Command from "../Commands/Command";
+import Command from "../commands/Command";
 import path from "path";
 import fs from "fs";
 
@@ -19,7 +19,10 @@ function parseSlashCommands (): { [key: string]: typeof Command } {
     const files = fs.readdirSync(commandsDir);
 
     files.forEach((file) => {
-        if (file.endsWith(".js") || file.endsWith(".ts")) {
+        if ((file.endsWith(".js") || file.endsWith(".ts"))) {
+            
+            if(file.startsWith("Command")) return;
+
             const command = require(path.join(commandsDir, file)).default;
 
             if (command.command && typeof command.execute === "function") {
