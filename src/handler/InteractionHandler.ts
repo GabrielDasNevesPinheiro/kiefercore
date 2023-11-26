@@ -1,5 +1,5 @@
 import { CacheType, CommandInteraction, Interaction } from "discord.js";
-import Command from "../commands/Command";
+import Command from "../Commands/Command";
 import path from "path";
 import fs from "fs";
 
@@ -14,7 +14,7 @@ function parseSlashCommands (): { [key: string]: typeof Command } {
     const cmdlist: { [key: string]: typeof Command } = {};
 
     
-    const commandsDir = path.join(__dirname, "../commands");
+    const commandsDir = path.join(__dirname, "../Commands");
 
     const files = fs.readdirSync(commandsDir);
 
