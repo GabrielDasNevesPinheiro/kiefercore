@@ -1,5 +1,5 @@
 import { CacheType, CommandInteraction, Interaction } from "discord.js";
-import Command from "../Commands/Command";
+import Command from "../bot/commands/Command";
 import path from "path";
 import fs from "fs";
 

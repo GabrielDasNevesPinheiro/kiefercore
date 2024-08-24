@@ -1,5 +1,5 @@
 import { Client, PresenceData, PresenceStatusData } from "discord.js";
-import { activities } from "../configuration/activities";
+import { activities } from "../bot/configuration/activities";
 
 export function setupActivities(client: Client<true>) {
     if(activities.timeout) {
