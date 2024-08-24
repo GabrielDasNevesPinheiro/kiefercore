@@ -4,9 +4,10 @@ import { existsSync } from "fs";
 // This script checks the filesystem integrity
 
 const paths = [
-    join("src", "commands", "Command.ts"),
-    join("src", "configuration", "intents.ts"),
-    join("src", "configuration", "activities.ts"),
+    join("src", "bot", "commands", "Command.ts"),
+    join("src", "bot", "configuration", "intents.ts"),
+    join("src", "bot", "configuration", "activities.ts"),
+    join("src", "bot", "events"),
 ]
 
 const checks = paths.map((path) => existsSync(path))
