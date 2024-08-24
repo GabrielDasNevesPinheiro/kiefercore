@@ -4,6 +4,7 @@ import executeAction from "./handler/InteractionHandler";
 import postSlashCommands from "./api/Register";
 import { checkIntegrity } from "./validators/filesystem";
 import { intents } from "./configuration/intents";
+import { setupActivities } from "./utils/client";
 config();
 
 // checking application structure integrity
@@ -13,7 +14,8 @@ const client = new Client({
     intents
 });
 
-client.on("ready", () => {
+client.on("ready", (client) => {
+    setupActivities(client);
     console.log("Done my rooster...");
 });
 
