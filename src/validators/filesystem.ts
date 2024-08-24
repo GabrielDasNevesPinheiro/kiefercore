@@ -1,15 +1,21 @@
 import { join } from "path";
 import { existsSync } from "fs";
+import { exit } from "process";
 
 
 // This script checks the filesystem integrity
-const commandsPath = join("src", "commands")
-const isCommandOk = existsSync(commandsPath)
-const commandClassPath = join("src", "commands", "Command.ts")
-const isCommandClassOk = existsSync(commandClassPath)
 
+const paths = [
+    join("src", "commands", "Command.ts"),
+    join("src", "configuration", "intents.ts")
+]
+
+const checks = paths.map((path) => existsSync(path))
 
 export function checkIntegrity() {
-    if (!isCommandOk) throw new Error(`Missing commands folder at: ${commandsPath}`)
-    if (!isCommandClassOk) throw new Error(`Missing command class at: ${commandClassPath}`)
+    const canProceed = checks.find((element) => element == false) as boolean
+    
+    if(!canProceed) {
+        throw new Error(`Missing necessary file: ${paths[checks.indexOf(canProceed)]}`)
+    }
 }
