@@ -3,7 +3,7 @@ import { config } from "dotenv";
 import executeAction from "./handler/InteractionHandler";
 import postSlashCommands from "./api/Register";
 import { checkIntegrity } from "./validators/filesystem";
-import { intents } from "./configuration/intents";
+import { intents } from "./bot/configuration/intents";
 import { setupActivities } from "./utils/client";
 config();
 
