@@ -21,11 +21,9 @@ export default function postSlashCommands() {
 
     try {
 
-        console.log("UPDATING SLASH COMMANDS...");
-
         rest.put(Routes.applicationCommands(client_id), { body: commands });
 
-        console.log("DONE, MY ROOSTER.");
+        console.log("Slash commands updated.");
 
     } catch (error) {
 
