@@ -1,5 +1,7 @@
-import { Client, PresenceData, PresenceStatusData } from "discord.js";
+import { Client, PresenceStatusData } from "discord.js";
 import { activities } from "../bot/configuration/activities";
+import { join } from "path";
+import { readdirSync } from "fs";
 
 export function setupActivities(client: Client<true>) {
     if(activities.timeout) {
@@ -10,6 +12,22 @@ export function setupActivities(client: Client<true>) {
     } else {
         
     }
+}
+
+export function loadEvents(client: Client<boolean>) {
+    const path = join("src", "bot", "events");
+    const files = readdirSync(path)
+
+    files.forEach((file) => {
+        if (file.endsWith("js") || file.endsWith("ts")) {
+            const name = file.replace(/.ts|.js/, "")
+            const event = require(`../bot/events/${file}`).default;    
+            client.on(name, (arg) => event(arg));
+        }
+
+
+    })
+
 }
 
 function setActivity(client: Client<true>, config: ActivityConfig) {
