@@ -12,3 +12,10 @@ Uma forma simples de construir seu bot para o discord.
 - Events
 <p>Com a estrutura do projeto, você será capaz de construir seu bot sem se preocupar com a organização ou estrutura de arquivos, pois eu organizei isso para você 😇.</p>
 
+## Variáveis de Ambiente
+
+Em `.env.example` você verá as variáveis de ambiente necessárias para seu código funcionar apropriadamente. Você pode criar seu arquivo `.env` a partir dele.
+
+`TOKEN` → token do seu bot.
+
+`CLIENT_ID` → client id do seu bot.
