@@ -1,8 +1,9 @@
-import { Client, PresenceStatusData } from "discord.js";
+import { CacheType, Client, Interaction, PresenceStatusData } from "discord.js";
 import { activities } from "../bot/configuration/activities";
 import { join } from "path";
 import { readdirSync } from "fs";
 import { customProfile } from "../bot/configuration/profile";
+import executeAction from "../handler/InteractionHandler";
 
 export function setupActivities(client: Client<true>) {
     if(activities.timeout) {
@@ -22,8 +23,25 @@ export function loadEvents(client: Client<boolean>) {
     files.forEach((file) => {
         if (file.endsWith("js") || file.endsWith("ts")) {
             const name = file.replace(/.ts|.js/, "")
-            const event = require(`../bot/events/${file}`).default;    
-            client.on(name, (arg) => event(arg));
+            const event = require(`../bot/events/${file}`).default;
+
+            if(name == "ready") {
+                client.on(name, (arg) => {
+                    setupActivities(client as Client<true>);
+                    loadCustomProfile(client as Client<true>);
+                    console.log("Application is running.");
+                    event(arg);
+                })
+            } else if (name == "interactionCreate") {
+                
+                client.on(name, (arg) => {
+                    callSlashCommand(arg);
+                    event(arg);
+                });
+
+            } else {
+                client.on(name, (arg) => event(arg));
+            }
         }
 
 
@@ -44,4 +62,10 @@ function setActivity(client: Client<true>, config: ActivityConfig) {
     const used = config.activities?.shift()
     
     if(used) config.activities?.push(used)
+}
+
+function callSlashCommand(interaction: Interaction<CacheType>) { // this function calls the slash command to the user
+    if (!interaction.isChatInputCommand()) return;
+    if (!interaction.channel) return;
+    executeAction(interaction.commandName, interaction);
 }
