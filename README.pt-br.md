@@ -55,5 +55,13 @@ public static async execute(interaction: CommandInteraction<CacheType>) {
 #### Sempre que você iniciar a aplicação, será enviado para a API do discord os comandos, então eles sempre estarão atualizados.
 
 # Eventos
+<span>Dentro do diretório `src/bot/events` você pode criar os eventos do `Client`.</span>
+
+<span>Existem dois eventos pré-criados que são necessários para o funcionamento do projeto, eles também servem como exemplo para você. Para criar um evento do seu bot, você deve nomear o arquivo com o nome exato do evento e é preciso exportar uma função `default`, tudo o que fica dentro da função `default` exportada será executado quando aquele evento for chamado</span>
+
+### Um breve exemplo: `interactionCreate.ts`
+Esse script exporta uma função default que é executada sempre que o `Client` identifica o evento `interactionCreate`.
+
+Visite a [Documentação do discord.js](https://discord.js.org/docs/packages/discord.js/14.14.1/Events:Enum) e veja os nomes exatos dos eventos para nomear os arquivos.
 
 # Personalização
