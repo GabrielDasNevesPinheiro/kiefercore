@@ -6,9 +6,10 @@
 
 ## Simplified features
 
-- Slash commands
-- Presence
-- Events
+* [Slash Commands](#slash-commands)
+* [Events](#events)
+* [Customization](#customization)
+
 <p>With the project structure, you will be able to build your bot without worrying about organization or file structure as I organized it for you 😇.</p>
 
 ## Environment Variables
@@ -18,13 +19,6 @@ In `.env.example` you'll see the environment variables necessary for your code t
 `TOKEN` → your bot's token.
 
 `CLIENT_ID` → your bot's client id.
-
-# Learn about this project
-
-* [Slash Commands](#slash-commands)
-* [Events](#events)
-* [Customization](#customization)
-
 
 # Slash Commands
 <span>Inside the `src/bot/commands` directory are the files directed to your Slash Commands.

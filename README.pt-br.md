@@ -6,9 +6,10 @@
 
 ## Funcionalidades simplificadas
 
-- Slash Commands
-- Presence
-- Events
+* [Slash Commands](#slash-commands)
+* [Eventos](#eventos)
+* [Personalização](#personalização)
+
 <p>Com a estrutura do projeto, você será capaz de construir seu bot sem se preocupar com a organização ou estrutura de arquivos, pois eu organizei isso para você 😇.</p>
 
 ## Variáveis de Ambiente
@@ -18,13 +19,6 @@ Em `.env.example` você verá as variáveis de ambiente necessárias para seu c�
 `TOKEN` → token do seu bot.
 
 `CLIENT_ID` → client id do seu bot.
-
-# Aprenda sobre este projeto
-
-* [Slash Commands](#slash-commands)
-* [Eventos](#eventos)
-* [Personalização](#personalização)
-
 
 # Slash Commands
 <span>Dentro do diretório `src/bot/commands` ficam os arquivos direcionados à seus Slash Commands.
