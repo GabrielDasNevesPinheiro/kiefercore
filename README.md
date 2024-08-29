@@ -65,3 +65,4 @@ This script exports a default function that is executed whenever the `Client` id
 Visit the [Discord.js Documentation](https://discord.js.org/docs/packages/discord.js/14.14.1/Events:Enum) and see the exact names of the events to name the files.
 
 # Customization
+Now, in the file located at `src/bot/configuration/profile.ts` you can customize your bot's `username` and an attribute called `imageUrl` that modifies its profile image. These settings only happen if you define a value in these attributes.
