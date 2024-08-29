@@ -7,6 +7,9 @@ const paths = [
     join("src", "bot", "commands", "Command.ts"),
     join("src", "bot", "configuration", "intents.ts"),
     join("src", "bot", "configuration", "activities.ts"),
+    join("src", "bot", "configuration", "profile.ts"),
+    join("src", "bot", "events", "interactionCreate.ts"),
+    join("src", "bot", "events", "ready.ts"),
     join("src", "bot", "events"),
 ]
 
