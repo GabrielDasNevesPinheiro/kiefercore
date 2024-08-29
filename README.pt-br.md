@@ -12,6 +12,17 @@
 
 <p>Com a estrutura do projeto, você será capaz de construir seu bot sem se preocupar com a organização ou estrutura de arquivos, pois eu organizei isso para você 😇.</p>
 
+## Execução
+### NPM
+```
+npm run dev
+```
+
+### Yarn
+```
+yarn dev
+```
+
 ## Variáveis de Ambiente
 
 Em `.env.example` você verá as variáveis de ambiente necessárias para seu código funcionar apropriadamente. Você pode criar seu arquivo `.env` a partir dele.
